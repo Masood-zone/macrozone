@@ -1,56 +1,57 @@
-# Welcome to your Expo app 👋
+# MacroZone
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MacroZone is a React Native meal tracking app built with Expo SDK 55 and Expo Router. It helps users log meals, track daily macros, and review recent intake from a simple tab-based interface.
 
-## Get started
+## Project Summary
 
-1. Install dependencies
+This app was developed as a step-by-step crash course project and grew from a basic Expo starter into a small but complete tracking experience. The build focused on a few core ideas:
 
-   ```bash
-   npm install
-   ```
+1. Set up an Expo Router project with a root stack and a tab navigator for Home, Add Meal, and All Meals.
+2. Created reusable UI components for the date header, macro cards, recent meals, sharing, copying summaries, and reminder toggles.
+3. Built the Add Meal screen with form validation, haptic feedback, and navigation back to the home screen after saving.
+4. Added local persistence with AsyncStorage so meals survive app restarts.
+5. Calculated macro totals from stored meals and refreshed the UI whenever the home or meals screens regain focus.
+6. Added meal deletion, clear-all support, share and copy actions, and reminder scheduling through Expo notifications.
 
-2. Start the app
+The result is a lightweight nutrition log that keeps the interface focused while still covering common mobile app patterns like routing, storage, notifications, and device actions.
 
-   ```bash
-   npx expo start
-   ```
+## Key Features
 
-In the output, you'll find options to open the app in a
+- Track meals with calories, protein, carbs, and fat.
+- View today’s totals in a macro grid on the home screen.
+- Review the latest meals directly on the home screen.
+- Browse the full meal history on the All Meals screen.
+- Add new meals from a dedicated form.
+- Delete individual meals or clear all stored meals.
+- Share or copy a daily summary.
+- Enable meal reminder notifications.
+- Provide haptic feedback for a more polished mobile experience.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Development Notes
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+The project uses file-based routing under src/app, shared design tokens in src/styles/global.ts, persistent storage in src/storage/meals.ts, and reusable components in src/components. The home screen loads meals when it comes into focus so the totals and recent list always reflect the latest stored data.
 
-## Get a fresh project
+## Getting Started
 
-When you're ready, run:
+Install dependencies:
 
-```bash
-npm run reset-project
-```
+npm install
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Start the app:
 
-### Other setup steps
+npx expo start
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+You can then open the app in Expo Go, an Android emulator, an iOS simulator, or the web preview, depending on your environment.
 
-## Learn more
+## Available Scripts
 
-To learn more about developing your project with Expo, look at the following resources:
+- npm run start: Start the Expo development server.
+- npm run android: Open the app on Android.
+- npm run ios: Open the app on iOS.
+- npm run web: Open the app in a web browser.
+- npm run lint: Run Expo lint checks.
+- npm run reset-project: Restore the starter project structure.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Related Notes
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The full crash-course walkthrough is preserved in React Native Crash Course.md for reference.
